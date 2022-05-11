@@ -1,0 +1,26 @@
+### Products index
+GET http://localhost:3000/products.json
+
+### Products show
+GET http://localhost:3000/products/1.json
+
+### Products create
+POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "name": "sleeping bag", 
+  "price": 40, 
+  "description": "tesing",
+  "image_url": "https://staticdelivery.nexusmods.com/mods/1151/images/12353-0-1461721930.png"
+}
+### Products update
+PATCH http://localhost:3000/products/2.json
+Content-Type: application/json
+
+{
+  "name": "Sleeping bag"
+}
+
+### Products destroy
+DELETE http://localhost:3000/products/4
