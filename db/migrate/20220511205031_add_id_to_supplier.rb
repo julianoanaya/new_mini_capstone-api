@@ -3,3 +3,4 @@ class AddIdToSupplier < ActiveRecord::Migration[7.0]
     add_column :suppliers, :suppliers_id, :integer
   end
 end
+#do need this one
