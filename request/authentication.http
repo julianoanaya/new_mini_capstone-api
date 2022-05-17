@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
   "name": "Test name",
-  "email": "test1@test.com",
+  "email": "test4@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -14,16 +14,24 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "test4@test.com",
   "password": "password"
 }
 
 ###
 POST http://localhost:3000/orders.json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4OTE3MDd9.VXC9cqPl4WPNvz7isa9F5jeuzMasyKOmpxUOlHL9fys"
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTI4OTU1OTJ9.OKPqPu7KmKBMtr4W42SjXcsmnuvfC9LINxP2aE4u0Mc
 
 {
-  "product_id": 3,
-  "quantity": 4
+  "product_id": 1,
+  "quantity": 2
 }
+
+### index
+GET http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTI4OTU1OTJ9.OKPqPu7KmKBMtr4W42SjXcsmnuvfC9LINxP2aE4u0Mc
+
+### show
+GET http://localhost:3000/orders/4.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTI4OTU1OTJ9.OKPqPu7KmKBMtr4W42SjXcsmnuvfC9LINxP2aE4u0Mc
