@@ -1,0 +1,29 @@
+### Users create (signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "Test name",
+  "email": "test1@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+
+###
+POST http://localhost:3000/orders.json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4OTE3MDd9.VXC9cqPl4WPNvz7isa9F5jeuzMasyKOmpxUOlHL9fys"
+
+{
+  "product_id": 3,
+  "quantity": 4
+}

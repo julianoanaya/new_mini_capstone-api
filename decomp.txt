@@ -1,0 +1,6 @@
+Write out all the steps necessary for your mini-capstone backend to allow users to purchase products. (aim for roughly 5 to 10 steps)
+ 
+ make an order controller 
+ make an order instance 
+ to purchase products the first thing we need to do is set up a relationship between products and users and orders
+ after we have 
