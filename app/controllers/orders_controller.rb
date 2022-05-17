@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
+    before_action :authenticate_user
+
     def create
-        if current_user
             product = Product.find_by(id: params[:product_id])
             order = Order.new(
             product_id: params[:product_id],
@@ -10,23 +11,19 @@ class OrdersController < ApplicationController
             tax: product.tax * params[:quantity],
             total: product.total
         )
-            order.save
+        if order.save
             render json: order.as_json
         else
-            render json: {errors: order.errors.full_messages}, status: :bad_request
+            render json: "unauthorized"
         end
     end
-    def index
+    def index # not working well with unauthorization
         orders = current_user.orders
         render json: orders.as_json
     end
+
     def show
         order = current_user.orders.find_by(id: params[:id])
         render json: ordeer.as_json
     end
 end
-
-# else
-#     render json: { errors: order.errors.full_messages }, status: :bad_request
-# end
-# end

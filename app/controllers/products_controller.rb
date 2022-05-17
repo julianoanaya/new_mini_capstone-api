@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+  before_action :authenticate_user
     def index
         @products = Product.all
         render template: "products/index"
@@ -23,7 +25,7 @@ class ProductsController < ApplicationController
         else
             render json: { errors: product.eroor.full_messages }, status: :unprocessable_entity
         end
-      end
+    end
     
       def update
         product = Product.find_by(id: params[:id])

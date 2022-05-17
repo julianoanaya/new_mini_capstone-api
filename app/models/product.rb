@@ -7,6 +7,9 @@ class Product < ApplicationRecord
     belongs_to :supplier
     has_many :images
     has_many :orders
+    has_many :category_products
+    has_many :categories, through: :category_product
+    
     def is_discounted?
         price < 10
       end
@@ -18,10 +21,17 @@ class Product < ApplicationRecord
       def total
         (price + tax).round(2)
       end
-      # def supplier
+      # supplier
       #   Supplier.find_by(id: supplier_id)
       # end
-      # def images
+      #  images
       #   Image.where(product_id: id)
+      # end
+      # def categories
+      #   categories_array = []
+      #   category_products.each do |category_product|
+      #     categories_array << category_product.category
+      #   end
+      #   return categories_array
       # end
   end

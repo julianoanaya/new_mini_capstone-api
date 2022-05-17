@@ -7,9 +7,8 @@ GET http://localhost:3000/products/1.json
 
 ### Products create
 POST http://localhost:3000/products.json
-Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTI4MDg4MTl9.2T5DpE-zQPEv2xpo91zgPkJoSxkF7go77aZL2l_u-wY"
-
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTI4OTU1OTJ9.OKPqPu7KmKBMtr4W42SjXcsmnuvfC9LINxP2aE4u0Mc
 
 {
   "name": "sleeping bag", 
